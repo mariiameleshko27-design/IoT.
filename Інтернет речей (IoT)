@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтернет речей (IoT)</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a1f44, #0f3d91, #1e90ff);
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ffffff, #4fc3f7, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(79,195,247,0.6);
+    letter-spacing: 2px;
+}
+       header p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #e3f2fd;
+    letter-spacing: 1px;
+}
+        nav {
+            background: rgba(0, 0, 50, 0.4);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #4fc3f7;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+.section-title {
+    text-align: center;
+    margin-top: 40px;
+    color: #ffeb3b;  /* жовтий колір */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* трошки тіні для виділення */
+}
+        
+        .cards {
+  display: flex;
+  flex-wrap: wrap;       /* щоб картки переносилися на наступний рядок на мобільних */
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: #0f3d91;       /* блакитно-синя картка */
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1 1 250px;           /* мінімальна ширина 250px */
+  color: #e3f2fd;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  font-family: 'Arial', sans-serif;   /* можна замінити на будь-який шрифт */
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ffdd57;                    /* виділяючий колір для назв */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;                         /* відстань між іконкою і текстом */
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e3f2fd;
+}        .stat {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4fc3f7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0,0,50,0.5);
+            margin-top: 50px;
+        }
+
+        /* Іконки */
+        i {
+            margin-right: 10px;
+            color: #4fc3f7;
+            transition: 0.3s;
+        }
+
+        .card:hover i {
+            color: white;
+            transform: scale(1.2);
+        }
+
+        nav i {
+            margin-right: 6px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text p{
+    margin-bottom:20px;
+    text-align:justify;
+    line-height:1.7;
+    text-indent:30px;
+}
+
+.about-image{
+    flex:1;
+    text-align:center;
+}
+
+.about-image img{
+    max-width:120%;
+    height:400 px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+.card-img{
+  width:100%;
+  max-height:170px;
+  object-fit:cover;
+  margin-top:10px;
+  border-radius:10px;
+}
+.stats-container{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.stat-box {
+  background:#1565c0; 
+  color:#ffdd57;
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  width:220px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+
+.stat-box:hover {
+  transform:translateY(-5px);
+}
+
+.stat-number {
+  font-size:50px;
+  font-weight:bold;
+  color:#ffeb3b;
+}
+
+.chart-container {
+  max-width:900px;
+  margin:50px auto;
+}
+
+.stats-text {
+  max-width:800px;
+  margin:30px auto 0;
+  text-align:center;
+  line-height:1.6;
+  font-size:1.1rem;
+  color:#e0f7fa;
+}
+
+.section-title {
+  text-align:center;
+  margin-top:50px;
+  color:#0b3c91;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fa-solid fa-network-wired"></i> Інтернет речей (IoT)</h1>
+    <p>Від датчиків до життя: технології, що трансформують світ</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about"><i class="fa-solid fa-circle-info"></i> Що таке IoT</a></li>
+        <li><a href="#examples"><i class="fa-solid fa-microchip"></i> Приклади</a></li>
+        <li><a href="#applications"><i class="fa-solid fa-diagram-project"></i> Застосування</a></li>
+        <li><a href="#stats"><i class="fa-solid fa-chart-line"></i> Статистика</a></li>
+    </ul>
+</nav>
+<section id="about">
+  <div class="about-container">
+
+    <!-- Текст ліворуч -->
+    <div class="about-text">
+      <h2 class="section-title">Що таке Інтернет речей?</h2>
+</p>
+      <p>
+        Інтернет речей (Internet of Things, IoT) — це технологічна концепція, за якою різні фізичні пристрої підключаються до мережі Інтернет і можуть обмінюватися даними між собою або з користувачем. Такі пристрої оснащені датчиками, програмним забезпеченням і технологіями зв’язку, що дозволяє їм збирати, передавати та обробляти дані. Завдяки Інтернету речей різні пристрої можуть працювати автоматично, обмінюватися інформацією та виконувати певні дії без постійного втручання людини. Це дає можливість підвищити ефективність роботи систем, оптимізувати використання ресурсів і зробити повсякденне життя більш зручним.
+      </p>
+
+      <p>
+        Основна мета IoT полягає у зборі, аналізі та обміні інформацією між пристроями для підвищення ефективності процесів, автоматизації систем і створення інтелектуального середовища, здатного адаптуватися до потреб користувача.
+      </p>
+
+      <p>
+        Технології Інтернету речей застосовуються у багатьох сферах, зокрема у системах "розумного дому", транспорті, промисловості, медицині, сільському господарстві та міській інфраструктурі. Вони допомагають контролювати процеси, збирати важливі дані та приймати більш точні рішення на основі отриманої інформації.
+      </p>
+    </div>
+
+    <!-- Картинка праворуч -->
+    <div class="about-image">
+      <img src="C:\Users\User\Downloads\h.jpg" alt="Internet of Things">
+    </div>
+
+  </div>
+</section>
+
+<section id="examples">
+    <h2 class="section-title">Приклади IoT-пристроїв</h2>
+</p>
+ <   
+
+    <div class="cards">
+
+        <div class="card">
+            <h3><i class="fa-solid fa-house"></i> Розумний будинок</h3>
+            <p>Термостати, освітлення, системи безпеки, які керуються через смартфон.</p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fa-solid fa-heart-pulse"></i> Носимі пристрої</h3>
+            <p>Фітнес-браслети та смарт-годинники, що відстежують здоров'я.</p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fa-solid fa-city"></i> Розумне місто</h3>
+            <p>Інтелектуальні світлофори, моніторинг транспорту та екології.</p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fa-solid fa-industry"></i> Промисловий IoT</h3>
+            <p>Автоматизація виробництва та прогнозування поломок обладнання.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="application">
+  <h2 class="section-title">Сфери застосування</h2>
+</p>
+      
+
+  <div class="cards">
+
+    <div class="card">
+      <h3><i class="fa-solid fa-home"></i> Смарт-дім ("Розумний будинок")</h3>
+      <p>IoT допомагає зробити ваш будинок розумним і комфортним. Розумні термостати, лампи та замки дозволяють автоматично керувати температурою, освітленням і безпекою, при цьому раціонально використовуючи енергію та час. Ви можете контролювати все зі смартфона або голосового помічника, забезпечуючи зручність та спокій.</p>
+<img src="C:\Users\User\Downloads\г.jpg" alt="Смарт дім" class="card-img">
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-hospital"></i> Охорона здоров'я</h3>
+      <p>Смарт-пристрої відстежують стан здоров’я та активність людини в режимі реального часу. Фітнес-трекери, смарт-годинники і медичні сенсори допомагають вчасно помічати проблеми, контролювати пульс, сон, рівень цукру в крові та інші показники. Це дозволяє підтримувати здоров’я, попереджати захворювання і зменшувати ризик ускладнень.</p>
+<img src="C:\Users\User\Downloads\2.jpg" alt="Охорона здоров'я" class="card-img">
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-industry"></i> Промисловість</h3>
+      <p>IoT у промисловості підвищує ефективність виробництва. Датчики на обладнанні відстежують його стан і передбачають поломки, що дозволяє зменшити простої в роботі. Автоматизація процесів і моніторинг продуктивності забезпечують стабільну якість продукції та економію ресурсів.</p>
+<img src="C:\Users\User\Downloads\3.webp" alt="Промисловість" class="card-img">
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-truck"></i> Транспорт і логістика</h3>
+      <p>Розумні системи в транспорті дозволяють контролювати стан транспортних засобів та вантажів у реальному часі. GPS-трекери та сенсори температури допомагають оптимізувати маршрути, забезпечувати безпеку перевезень і підтримувати належні умови для продуктів. Це скорочує витрати та підвищує надійність доставки.</p>
+<img src="C:\Users\User\Downloads\4.jpg" alt="Транспорт і логістика" class="card-img">
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-city"></i> Міська інфраструктура ("Smart City")</h3>
+      <p>Розумні міста використовують IoT для управління транспортом, енергетикою та безпекою. Сенсори контролюють світлофори, водопостачання, якість повітря та рівень шуму. Це робить місто комфортнішим, зменшує затори, економить ресурси та підвищує якість життя жителів.</p>
+<img src="C:\Users\User\Downloads\5.webp" alt="Міська інфраструктура" class="card-img">
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-wheat-awn"></i> Сільське господарство</h3>
+      <p>IoT робить фермерство точнішим та ефективнішим. Датчики контролюють стан ґрунту, вологості та росту рослин, а автоматичні системи зрошення і підживлення реагують на потреби полів. Це підвищує врожайність, економить воду та ресурси, допомагає приймати обґрунтовані рішення щодо догляду за рослинами.</p>
+<img src="C:\Users\User\Downloads\6.avif" alt="Сільське господарство" class="card-img">
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-cart-shopping"></i> Роздрібна торгівля</h3>
+      <p>IoT дозволяє магазинам автоматично відстежувати запаси і аналізувати поведінку покупців. Інтелектуальні полиці та смарт-каси роблять процес покупки зручнішим, а персоналізовані пропозиції підвищують продажі. Це економить час, оптимізує ресурси та покращує клієнтський досвід.</p>
+<img src="C:\Users\User\OneDrive\Зображення\Знімки екрана\7.png" alt="Роздрібна торгівля" class="card-img">
+    </div>
+    <div class="card">
+  <h3><i class="fa-solid fa-bolt"></i> Енергетика та ресурси</h3>
+  <p>IoT допомагає ефективно керувати енергоспоживанням та природними ресурсами. Розумні лічильники, сенсори та мережі дозволяють відстежувати споживання електроенергії, води та газу в режимі реального часу, виявляти витоки і втрати. Це забезпечує економію ресурсів, знижує витрати та сприяє екологічній сталості.</p>
+<img src="C:\Users\User\Downloads\8.jpg" alt="Енергетика та ресурси" class="card-img">
+</div>
+
+  </div>
+</section>
+<section id="stats" style="background:#0b3c91; padding:50px 20px; color:white;">
+  <h2 class="section-title" style="text-align:center; color:#ffdd57;">Світова статистика IoT</h2>
+
+  <div class="stats-container">
+
+    <div class="stat-box">
+      <div class="stat-number" id="devices">0</div>
+      <p>Мільярдів IoT-пристроїв у світі</p>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-number" id="homes">0</div>
+      <p>Мільйонів розумних будинків</p>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-number" id="cities">0</div>
+      <p>Smart City проєктів</p>
+    </div>
+
+  </div>
+
+  <!-- Графік під картками -->
+  <div class="chart-container">
+    <canvas id="iotChart"></canvas>
+  </div>
+
+  <!-- Текст під графіком -->
+  <p class="stats-text">
+    Кількість пристроїв Інтернету речей стрімко зростає до 2025 року. 
+    Щороку дедалі більше пристроїв підключаються до мережі, що дозволяє автоматизувати процеси, 
+    покращувати аналіз даних та підвищувати ефективність у всіх сферах життя: від розумного дому до промисловості та міської інфраструктури.
+  </p>
+</section>
+
+<footer>
+    © 2026 | Інтернет речей (IoT)
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Динамічні лічильники
+function animateValue(id, start, end, duration) {
+  let range = end - start;
+  let current = start;
+  let increment = end > start ? 1 : -1;
+  let stepTime = Math.abs(Math.floor(duration / range));
+  let obj = document.getElementById(id);
+  let timer = setInterval(function() {
+    current += increment;
+    obj.innerHTML = current;
+    if (current == end) clearInterval(timer);
+  }, stepTime);
+}
+
+animateValue("devices", 0, 30, 2000);
+animateValue("homes", 0, 400, 2000);
+animateValue("cities", 0, 200, 2000);
+
+// Графік до 2025 року
+const ctx = document.getElementById('iotChart');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['2018','2019','2020','2021','2022','2023','2024','2025'],
+    datasets: [{
+      label: 'Кількість IoT пристроїв (млрд)',
+      data: [10,12,15,18,22,26,30,34],
+      borderColor: '#42a5f5',
+      backgroundColor:'rgba(66,165,245,0.3)',
+      tension:0.4,
+      fill:true,
+      pointBackgroundColor:'#ffeb3b',
+      pointRadius:6
+    }]
+  },
+  options:{
+    responsive:true,
+    plugins:{
+      legend:{display:true, labels:{color:'#ffeb3b', font:{size:14}}}
+    },
+    scales:{
+      x:{ticks:{color:'#ffeb3b'}},
+      y:{ticks:{color:'#ffeb3b'}}
+    }
+  }
+});
+</script>
+
+</body>
+</html>
